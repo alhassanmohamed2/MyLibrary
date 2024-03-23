@@ -1,4 +1,19 @@
 <?php require('partials/head.php'); ?>
+<div class="container mt-5">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="filterTable(this)">
+    <label class="form-check-label" for="flexCheckDefault">
+      Reading Now
+    </label>
+    </div>
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onchange="filterTableComplete(this)">
+    <label class="form-check-label" for="flexCheckDefault">
+      Completed
+    </label>
+  </div>
+</div>
+
 
 <div class="container mt-5">
  
@@ -23,7 +38,7 @@
             echo "<td>{$book->name}</td>";
             echo "<td>{$book->pageNum}</td>";
             echo "<td>{$book->bookPart}</td>";
-            echo "<td>{$book->completed}</td>";
+            echo "<td>". ($book->completed ? "Yes" : "No") . "</td>";
             echo "</tr>";
         }
         ?>
@@ -33,8 +48,8 @@
   </div>
 </div>
 <!-- -->
+
 <div class="container mt-5">
-    <h2>Add Book</h2>
     <div class="row">
       <div class="col-md-6">
       <form action="/update" method="post">
