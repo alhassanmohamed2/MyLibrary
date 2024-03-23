@@ -36,3 +36,21 @@ function filterTableComplete(checkbox){
         }
    }
 }
+
+
+//////////////
+
+function serachName(textbox){
+    filter = textbox.value;
+    for(let i = 1; i < tr.length ; i++){
+        td = tr[i].querySelectorAll("td")[1];
+        txtValue = td.textContent || td.innerText;
+        if(txtValue.indexOf(filter) > -1){
+            tr[i].style.display = "";
+        }else{
+            tr[i].style.display = "none";
+
+        }
+    }
+
+}

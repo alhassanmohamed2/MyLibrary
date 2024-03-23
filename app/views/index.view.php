@@ -14,6 +14,12 @@
   </div>
 </div>
 
+<div class="container mt-5">
+    <div class="form-group">
+      <label for="textInput">search</label>
+      <input type="text" class="form-control" id="textInput" placeholder="Type book name..." onkeyup="serachName(this)">
+    </div>
+  </div>
 
 <div class="container mt-5">
  
